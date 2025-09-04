@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3D Meshgrid Impulse Response Dataset</title>
+  <style>
+    body { font-family: system-ui, sans-serif; line-height: 1.6; margin: 2rem; max-width: 900px; }
+    h1 { font-size: 1.8rem; }
+    h2 { margin-top: 2rem; }
+    figure { margin: 1.5rem 0; }
+    figcaption { font-size: 0.9rem; color: #555; }
+    video { max-width: 100%; margin: 1rem 0; border: 1px solid #ddd; border-radius: 8px; }
+    pre { background: #f7f7f7; padding: .8rem; border-radius: 8px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h1>3D Meshgrid Impulse Response Dataset</h1>
+
+  <p>
+    This page provides an overview of the <strong>3D meshgrid impulse response (IR) dataset</strong>.
+    The dataset was measured in a room using a dense 3D spatial sampling grid.
+    It is intended for use in room acoustics analysis, wavefield synthesis,
+    and Physics-Informed Neural Networks (PINNs).
+  </p>
+<p>
+The impulse responses were measured at a sampling frequency of 48 kHz on a three-dimensional grid with a spatial interval of 2 cm. The grid consists of 48 positions along the x-axis, 51 positions along the y-axis, and 26 positions along the z-axis, resulting in a set of IRs for each loudspeaker. After the measurements, reflections caused by the frames of the microphone array measurement system were suppressed, and the dataset was subsequently resampled at 16 kHz.
+</p>
+
+<h2>Data availability</h2>
+<p>
+  The 3D meshgrid impulse response dataset is openly available on Zenodo:
+</p>
+<p>
+  <a href="https://doi.org/10.5281/zenodo.17051811">https://doi.org/10.5281/zenodo.17051811</a>
+</p>
+<p>
+  <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17051811.svg" alt="DOI badge">
+</p>
+
+<h3>How to cite</h3>
+<p>
+  Please cite as:<br>
+  Yoichi Haneda, Yi Ren (2025). <i>3D meshgrid room impulse response dataset (part I) </i>. Zenodo.  
+  <a href="https://doi.org/10.5281/zenodo.17051811">https://doi.org/10.5281/zenodo.17051811</a>
+</p>
+
+<pre><code>@dataset{haneda_meshgrid_ir_2025,
+  author       = {Haneda, Yoichi, Ren, Yi},
+  title        = {3D meshgrid room impulse response dataset (part I)},
+  year         = {2025},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.17051811},
+  url          = {https://doi.org/10.5281/zenodo.17051811}
+}
+</code></pre>
+
+<h2>Speaker and Microphone Arrangement</h2>
+
+<p>
+  <ul>
+    <li><code> Room dimension </code> :  8.4 × 6.14 × 2.66 m</li>
+    <li><code> Reverberation time </code> : 0.65 s </li>
+    <li><code> Speaker positions </code> :  ([5.54, 4.64, 3.72, 3.42], 0.94, 1.42) m</li>
+    <li><code> Microphone array positions </code> :  (3.74, 2.94, 1.11) m </li>
+    <li><code> Grid size </code> : 48 × 51 × 26 = 63,648 </li>
+  </ul>
+</p>
+
+<div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+  <figure style="flex: 1; min-width: 280px;">
+    <img src="assets/fig_setup.jpg" alt="Speaker arrangement" style="width:100%; border:1px solid #ccc; border-radius:8px;">
+    <figcaption style="text-align:center; font-size:0.9rem; color:#555;">
+      Fig. 1 — Speaker arrangement used in the measurements.
+    </figcaption>
+  </figure>
+
+  <figure style="flex: 1; min-width: 280px;">
+    <img src="assets/fig_micarray.jpg" alt="Microphone array" style="width:100%; border:1px solid #ccc; border-radius:8px;">
+    <figcaption style="text-align:center; font-size:0.9rem; color:#555;">
+      Fig. 2 — Microphone array used in the measurements.
+    </figcaption>
+  </figure>
+</div>
+
+<h2>Measurement Animations</h2>
+<p>Animations showing impulse responses measured at four different speaker positions.</p>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+  <figure>
+    <video controls src="assets/spk1.mp4" poster="assets/spk1.jpg" style="width:100%; border:1px solid #ccc; border-radius:8px;"></video>
+    <figcaption style="text-align:center; font-size:0.9rem; color:#555;">Animation 1 — Speaker position 1</figcaption>
+  </figure>
+
+  <figure>
+    <video controls src="assets/spk2.mp4" poster="assets/spk2.jpg" style="width:100%; border:1px solid #ccc; border-radius:8px;"></video>
+    <figcaption style="text-align:center; font-size:0.9rem; color:#555;">Animation 2 — Speaker position 2</figcaption>
+  </figure>
+
+  <figure>
+    <video controls src="assets/spk3.mp4" poster="assets/spk3.jpg" style="width:100%; border:1px solid #ccc; border-radius:8px;"></video>
+    <figcaption style="text-align:center; font-size:0.9rem; color:#555;">Animation 3 — Speaker position 3</figcaption>
+  </figure>
+
+  <figure>
+    <video controls src="assets/spk4.mp4" poster="assets/spk4.jpg" style="width:100%; border:1px solid #ccc; border-radius:8px;"></video>
+    <figcaption style="text-align:center; font-size:0.9rem; color:#555;">Animation 4 — Speaker position 4</figcaption>
+  </figure>
+</div>
+
+
+  <h2>HDF5 Dataset Structure</h2>
+  <p>
+    The dataset is stored in an <code>.h5</code> file, created using MATLAB. The structure is as follows:
+  </p>
+
+  <pre><code>% RIR dataset
+h5create(filename_out, '/rir', size(IR_flat), 'Datatype', 'single');
+h5write(filename_out, '/rir', IR_flat);
+
+h5create(filename_out, '/grid', size(grid_coords), 'Datatype', 'single');
+h5write(filename_out, '/grid', grid_coords);
+
+% Attributes
+h5writeatt(filename_out, '/', 'fs', single(fs));
+h5writeatt(filename_out, '/', 'c', single(c));
+
+% Speaker / microphone / room metadata
+h5writeatt(filename_out, '/', 'sp_pos', sp_pos);
+h5writeatt(filename_out, '/', 'mic_array_pos', mic_arr_pos);
+h5writeatt(filename_out, '/', 'room_size', room_size);
+h5writeatt(filename_out, '/', 'grid_dimensions', grid_num);
+</code></pre>
+
+  <h2>Metadata Description</h2>
+  <ul>
+    <li><code>/rir</code> : Impulse response data (time samples × flattened 3D grid  )</li>
+    <li><code>/grid</code> : Grid coordinates (x, y, z)</li>
+    <li><code>fs</code> : Sampling frequency [Hz]</li>
+    <li><code>c</code> : Speed of sound [m/s]</li>
+    <li><code>sp_pos</code> : Speaker positions [m]</li>
+    <li><code>mic_array_pos</code> : Microphone array positions [m]</li>
+    <li><code>room_size</code> : Room dimensions [m]</li>
+    <li><code>grid_dimensions</code> : Number of points along each axis</li>
+  </ul>
+
+  <p>
+    Return to the <a href="index.html">home page</a>.
+  </p>
+</body>
+</html>
