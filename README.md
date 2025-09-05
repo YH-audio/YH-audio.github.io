@@ -11,7 +11,7 @@ My research focuses on acoustic signal processing, spatial audio, and speech enh
 - Auditory user interfaces with motion capture
 
 ## Links
-- [3dMeshgridIR](https://YH-audio.hithub.io/meshgrid-ir.html)
+- [3dMeshgridIR](https://YH-audio.github.io/meshgrid-ir.html)
 - [Personal website](https://YH-audio.github.io/)
 - [Researchmap](https://researchmap.jp/7000003830)
 - [ORCID](https://orcid.org/0000-0001-8477-6575)
