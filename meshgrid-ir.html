@@ -25,17 +25,33 @@
   </p>
 
 <h2>Data availability</h2>
+
 <p>
-  The 3D meshgrid impulse response dataset is openly available on Zenodo:
+  The processed 3D meshgrid impulse response dataset (Part 1) is openly available on Zenodo:
 </p>
 <p>
   <a href="https://doi.org/10.5281/zenodo.17051811">https://doi.org/10.5281/zenodo.17051811</a>
 </p>
 <p>
-  <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17051811.svg" alt="DOI badge">
+  <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.17051811.svg" alt="DOI badge for Part 1">
 </p>
 
+<p>
+  We also provide a complementary raw dataset (Part 0), which contains room impulse responses sampled at 48 kHz before the removal of artificial reflections, with a duration of 100 ms:
+</p>
+<p>
+  <a href="https://doi.org/10.5281/zenodo.19656813">https://doi.org/10.5281/zenodo.19656813</a>
+</p>
+<p>
+  <img src="https://zenodo.org/badge/DOI/10.5281/zenodo.19656813.svg" alt="DOI badge for Part 0">
+</p>
 
+<p>
+  This page provides an overview of the <strong>3D meshgrid impulse response (IR) dataset</strong>.
+
+  <p>
+  This page primarily describes the processed dataset (Part 1).
+</p>
 
 <h2>Measurement Animations</h2>
 <p>Animations showing impulse responses measured at four different speaker positions.</p>
@@ -78,7 +94,7 @@ The impulse responses were measured at a sampling frequency of 48 kHz on a three
     <li><code> Reverberation time </code> : 0.65 s </li>
     <li><code> Loudspeakers </code> : Cambridge Audio MINX MIN12 (8 cm cubic) </li>
     <li><code> Speaker positions </code> :  ([5.54, 4.64, 3.72, 3.42], 0.94, 1.42) m</li>
-    <li><code> Microphone array origin </code> :  (3.74, 2.94, 1.11) m </li>
+    <li><code> Microphone array origin (absolute coordinates) </code> :  (3.74, 2.94, 1.11) m </li>
     <li><code> Grid interval </code> :  0.02 m </li>
     <li><code> Grid size </code> : 48 × 51 × 26 = 63,648 </li>
     <li><code> Measured sampling frequency </code> : 48,000 Hz </li>
@@ -143,19 +159,36 @@ h5writeatt(filename_out, '/', 'grid_dimensions', grid_num);
   </ul>
 
 <h3>How to cite</h3>
+
 <p>
-  Please cite as:<br>
-  Yoichi Haneda, Yi Ren (2025). <i>3D meshgrid room impulse response dataset (part I) </i>. Zenodo.  
+  <b>Part 1 (processed dataset):</b><br>
+  Yoichi Haneda, Yi Ren (2025). <i>3D meshgrid room impulse response dataset (Part 1)</i>. Zenodo.
   <a href="https://doi.org/10.5281/zenodo.17051811">https://doi.org/10.5281/zenodo.17051811</a>
 </p>
 
-<pre><code>@dataset{haneda_meshgrid_ir_2025,
+<pre><code>@dataset{haneda_meshgrid_ir_part1_2025,
   author       = {Haneda, Yoichi, Ren, Yi},
-  title        = {3D meshgrid room impulse response dataset (part I)},
+  title        = {3D meshgrid room impulse response dataset (Part 1)},
   year         = {2025},
   publisher    = {Zenodo},
   doi          = {10.5281/zenodo.17051811},
   url          = {https://doi.org/10.5281/zenodo.17051811}
+}
+</code></pre>
+
+<p>
+  <b>Part 0 (raw dataset):</b><br>
+  Yoichi Haneda (2025). <i>3D meshgrid room impulse response dataset (Part 0)</i>. Zenodo.
+  <a href="https://doi.org/10.5281/zenodo.19656813">https://doi.org/10.5281/zenodo.19656813</a>
+</p>
+
+<pre><code>@dataset{haneda_meshgrid_ir_part0_2025,
+  author       = {Haneda, Yoichi},
+  title        = {3D meshgrid room impulse response dataset (Part 0)},
+  year         = {2025},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.19656813},
+  url          = {https://doi.org/10.5281/zenodo.19656813}
 }
 </code></pre>
 
