@@ -93,7 +93,7 @@ The impulse responses were measured at a sampling frequency of 48 kHz on a three
     <li><code> Reverberation time </code> : 0.65 s </li>
     <li><code> Loudspeakers </code> : Cambridge Audio MINX MIN12 (8 cm cubic) </li>
     <li><code> Speaker positions </code> :  ([5.54, 4.64, 3.72, 3.42], 0.94, 1.42) m</li>
-    <li><code> Microphone array origin (absolute coordinates) </code> :  (3.74, 2.94, 1.11) m </li>
+    <li><code> Microphone array origin (left end of the array, absolute coordinates) </code> : (3.74, 2.94, 1.11) m </li>
     <li><code> Grid interval </code> :  0.02 m </li>
     <li><code> Grid size </code> : 48 × 51 × 26 = 63,648 </li>
     <li><code> Measured sampling frequency </code> : 48,000 Hz </li>
@@ -152,11 +152,60 @@ h5writeatt(filename_out, '/', 'grid_dimensions', grid_num);
     <li><code>fs</code> : Sampling frequency [Hz]</li>
     <li><code>c</code> : Speed of sound [m/s]</li>
     <li><code>sp_pos</code> : Speaker positions [m]</li>
-    <li><code>mic_array_pos</code> : Microphone array positions [m]</li>
+    <li><code>mic_array_pos</code> : Microphone array positions  (left end of the array) [m]</li>
     <li><code>room_size</code> : Room dimensions [m]</li>
     <li><code>grid_dimensions</code> : Number of points along each axis</li>
   </ul>
 
+
+<h2>Related publication</h2>
+
+<p>
+  The processed dataset (Part 1) and the suppression of reflections from
+  the microphone array measurement frame are described in the following paper:
+</p>
+
+<p>
+  Y. Haneda and Y. Ren,
+  "<i>3D Mesh Grid Room Impulse Responses Measured with A Linear Microphone Array And Suppression of Frame Reflections</i>,"
+  ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP),
+  Barcelona, Spain, 2026, pp. 15507-15511.
+</p>
+
+<p>
+  DOI:
+  <a href="https://doi.org/10.1109/ICASSP55912.2026.11461569">
+    10.1109/ICASSP55912.2026.11461569
+  </a>
+</p>
+
+<p>
+  If you use this dataset in your research, please also cite the above paper.
+</p>
+
+
+<h2>Python / MATLAB loading note</h2>
+
+<p>
+  Please note that the HDF5 dataset was generated using MATLAB,
+  which uses column-major array ordering.
+  When the dataset is loaded in Python/NumPy,
+  which uses row-major array ordering,
+  the dimensions of the <code>/rir</code> dataset may appear transposed.
+</p>
+
+<p>
+  Users should therefore carefully check the array shape after loading
+  the HDF5 file and transpose the array if necessary before reshaping.
+</p>
+
+<p>
+  A Jupyter Notebook example demonstrating how to correctly load,
+  reshape, and visualize the dataset in Python is included in the Zenodo record.
+</p>
+
+
+  
 <h3>How to cite</h3>
 
 <p>
